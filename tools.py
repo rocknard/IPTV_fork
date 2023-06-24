@@ -4,7 +4,7 @@ from torpy.http.requests import TorRequests
 
 
 def scraper():
-    #grab = None
+    grab = None
     lista = ""
     print('scraper : INFO : stay in tune...', flush=True)
     with open('site.txt', 'r') as f:
