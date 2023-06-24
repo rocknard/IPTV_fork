@@ -22,7 +22,7 @@ async def export_messages(export_file = "base.txt"):
             channel_dict = update_channel_dict(cleansed_content, channel_dict)
         except Exception as e:
             print("exportMessages : ERROR :", e)
-            sys.exit(1)
+            sys.exit(0)
             
         export_channels(channel_dict, export_file)
     
