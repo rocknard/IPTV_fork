@@ -40,7 +40,7 @@ def scraper():
         print("scraper : OK : channels retrieved")
     else:
         print("scraper : ERROR : channels could not be retrieved")
-        sys.exit(1)
+        sys.exit(0)
 
     return contenido
 
