@@ -11,18 +11,18 @@ def scraper():
         line = f.read()
         link = line.strip()
 
-    #while grab is None:
-        #try:
-    with TorRequests() as tor_requests:
-        with tor_requests.get_session() as sess:
-            grab = sess.get(link)
-            print(grab)
-        #except:
+    while grab is None:
+        try:
+            with TorRequests() as tor_requests:
+                with tor_requests.get_session() as sess:
+                    grab = sess.get(link)
+                    print(grab)
+        except:
             # El error de la librería torpy no tiene importancia y no afecta a futuros runs
-            #print("scraper : ERROR : line 20 torpy error")
+            print("scraper : ERROR : line 20 torpy error")
             #sys.exit(1) envía correo de aviso
             #sys.exit(0) NO envía correo
-            #sys.exit(1)
+            sys.exit(0)
 
     soup = BeautifulSoup(grab.text, 'html.parser')
     for enlace in soup.find_all('a'):
